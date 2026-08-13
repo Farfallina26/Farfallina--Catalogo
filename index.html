@@ -692,6 +692,233 @@
     .fav-panel{ left: 1rem; bottom: calc(var(--footer-h) + 4.9rem); }
   }
 
+  /* ---------- Carrito: ícono en la barra y panel ---------- */
+
+  .cart-toggle{
+    position: relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    cursor:pointer;
+    flex-shrink:0;
+  }
+
+  .cart-toggle svg{ width: 17px; height: 17px; }
+
+  .cart-badge{
+    position:absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--leaf);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.68rem;
+    display:none;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .cart-badge.show{ display:flex; }
+
+  .cart-panel{
+    position: fixed;
+    top: 68px;
+    right: 1.2rem;
+    width: min(360px, calc(100vw - 2.4rem));
+    max-height: min(70vh, 560px);
+    background: var(--paper);
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(46,42,69,0.28);
+    display: none;
+    flex-direction: column;
+    z-index: 41;
+    overflow: hidden;
+  }
+
+  .cart-panel.open{ display:flex; }
+
+  .cart-list{
+    overflow-y: auto;
+    padding: 0 1.1rem;
+    display:flex;
+    flex-direction:column;
+    gap: 0.7rem;
+  }
+
+  .cart-item{
+    display:flex;
+    align-items:center;
+    gap: 0.6rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .cart-item:last-child{ border-bottom:none; }
+
+  .cart-item-info{ flex:1; min-width:0; }
+
+  .cart-item-title{
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .cart-item-sub{
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 0.15rem;
+  }
+
+  .qty-stepper{
+    display:flex;
+    align-items:center;
+    gap: 0.4rem;
+    background: var(--paper-2);
+    border-radius: 999px;
+    padding: 0.15rem;
+  }
+
+  .qty-stepper button{
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border:none;
+    background:#fff;
+    color: var(--ink);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size: 0.9rem;
+    line-height:1;
+  }
+
+  .qty-stepper span{
+    min-width: 1.1rem;
+    text-align:center;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .cart-item-remove{
+    background:none;
+    border:none;
+    cursor:pointer;
+    color: var(--ink-soft);
+    width: 20px;
+    height: 20px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .cart-item-remove svg{ width: 13px; height: 13px; }
+
+  .cart-empty{
+    padding: 1.4rem 1.1rem;
+    text-align:center;
+    color: var(--ink-soft);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  .cart-total-row{
+    display:flex;
+    align-items:baseline;
+    justify-content: space-between;
+    padding: 0.8rem 1.1rem 0.3rem;
+    font-weight: 800;
+  }
+  .cart-total-row .n{ color: var(--leaf-dark); font-size: 1.05rem; }
+
+  .cart-panel-actions{
+    padding: 0.6rem 1.1rem 1.1rem;
+    display:flex;
+    flex-direction:column;
+    gap: 0.5rem;
+  }
+
+  .cart-panel-actions label{
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-bottom: 0.25rem;
+    display:block;
+  }
+
+  .cart-panel-actions input{
+    width:100%;
+    font-family:'Nunito', sans-serif;
+    font-size: 0.88rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background:#fff;
+    color: var(--ink);
+    outline:none;
+    margin-bottom: 0.7rem;
+  }
+  .cart-panel-actions input:focus{ border-color: var(--leaf); }
+
+  .cart-panel-actions .whatsapp-btn{
+    width:100%;
+    justify-content:center;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cart-clear-btn{
+    background:none;
+    border:none;
+    color: var(--danger);
+    font-family:'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor:pointer;
+    padding: 0.3rem;
+    align-self:center;
+  }
+
+  .add-cart-btn{
+    width:100%;
+    margin-top: 0.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 0.4rem;
+    background: var(--paper-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.45rem;
+    font-family:'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    cursor:pointer;
+    transition: background 0.15s ease;
+  }
+  .add-cart-btn:hover{ background: var(--leaf); color:#fff; border-color: var(--leaf); }
+  .add-cart-btn svg{ width: 14px; height: 14px; }
+
+  @media (max-width: 720px){
+    .cart-panel{ top: 112px; right: 1rem; }
+  }
+
   /* ---------- Carga masiva por ISBN ---------- */
 
   .bulk-modal .modal{ max-width: 560px; }
@@ -928,6 +1155,10 @@
     </div>
     <div class="chips" id="chips"></div>
     <div class="toolbar-right">
+      <button class="cart-toggle" id="cartToggle" title="Tu carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
       <span class="count" id="count"></span>
       <button class="tool-btn primary" id="addBookBtn" style="display:none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -941,6 +1172,33 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
         Descargar página
       </button>
+    </div>
+  </div>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="fav-panel-header">
+      <h3>Tu carrito</h3>
+      <button class="fav-panel-close" id="cartPanelClose" type="button" title="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-total-row" id="cartTotalRow" style="display:none;">
+      <span>Subtotal</span>
+      <span class="n" id="cartTotalValue">$0</span>
+    </div>
+    <div class="cart-panel-actions" id="cartActions" style="display:none;">
+      <div>
+        <label for="cartCP">Tu código postal (opcional — nos ayuda a calcular el envío)</label>
+        <input type="text" id="cartCP" placeholder="Ej: 2647" inputmode="numeric">
+      </div>
+      <button class="whatsapp-btn" id="cartWhatsappBtn" type="button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M16.02 3C9.4 3 4 8.36 4 15c0 2.34.64 4.53 1.76 6.4L4 29l7.78-1.7A11.9 11.9 0 0 0 16.02 27C22.64 27 28 21.64 28 15S22.64 3 16.02 3Zm0 21.8c-1.98 0-3.83-.56-5.4-1.53l-.39-.23-4.62 1 .99-4.5-.25-.41A9.7 9.7 0 0 1 6.2 15c0-5.42 4.4-9.82 9.82-9.82 5.42 0 9.82 4.4 9.82 9.82 0 5.42-4.4 9.8-9.82 9.8Z"/>
+        </svg>
+        Finalizar pedido por WhatsApp
+      </button>
+      <button class="cart-clear-btn" id="cartClearBtn" type="button">Vaciar carrito</button>
     </div>
   </div>
 
@@ -1086,6 +1344,12 @@
    El pie de página fijo (dirección, WhatsApp, email, Instagram) y el
    número de WhatsApp se editan en las constantes de acá abajo, y en
    el <footer> del HTML para la dirección y el Instagram.
+
+   CARRITO DE COMPRAS: cada visitante puede agregar libros al carrito
+   (ícono arriba a la derecha). Se guarda en su navegador, igual que
+   los favoritos. Al finalizar, arma un mensaje con el pedido completo
+   y lo abre en WhatsApp — el pago y el envío se coordinan a mano por
+   ese chat, esta página no procesa pagos ni cobra nada por sí sola.
    ======================================================================= */
 
 /* Contraseña simple para entrar al modo edición.
@@ -1627,6 +1891,18 @@ const favActions = document.getElementById('favActions');
 const favWhatsappBtn = document.getElementById('favWhatsappBtn');
 const favClearBtn = document.getElementById('favClearBtn');
 
+const cartToggle = document.getElementById('cartToggle');
+const cartBadge = document.getElementById('cartBadge');
+const cartPanel = document.getElementById('cartPanel');
+const cartPanelClose = document.getElementById('cartPanelClose');
+const cartList = document.getElementById('cartList');
+const cartTotalRow = document.getElementById('cartTotalRow');
+const cartTotalValue = document.getElementById('cartTotalValue');
+const cartActions = document.getElementById('cartActions');
+const cartCP = document.getElementById('cartCP');
+const cartWhatsappBtn = document.getElementById('cartWhatsappBtn');
+const cartClearBtn = document.getElementById('cartClearBtn');
+
 function toast(msg){
   toastEl.textContent = msg;
   toastEl.classList.add('show');
@@ -1722,6 +1998,10 @@ function render(){
                 </svg>
               </a>
             </div>
+            <button class="add-cart-btn" type="button" data-action="add-cart" data-id="${libro.id}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              Agregar al carrito
+            </button>
           </div>
         </div>`;
     });
@@ -1737,6 +2017,9 @@ function render(){
   });
   catalogEl.querySelectorAll('[data-action="wa-libro"]').forEach(a => {
     a.addEventListener('click', () => track('contacto_whatsapp', { origen: 'tarjeta_libro', libro: a.dataset.titulo }));
+  });
+  catalogEl.querySelectorAll('[data-action="add-cart"]').forEach(btn => {
+    btn.addEventListener('click', () => agregarAlCarrito(btn.dataset.id));
   });
   catalogEl.querySelectorAll('[data-action="edit"]').forEach(btn => {
     btn.addEventListener('click', () => openModal(btn.dataset.id));
@@ -2090,7 +2373,169 @@ document.addEventListener('click', (e) => {
       !favToggle.contains(e.target)){
     favPanel.classList.remove('open');
   }
+  if (cartPanel.classList.contains('open') &&
+      !cartPanel.contains(e.target) &&
+      !cartToggle.contains(e.target)){
+    cartPanel.classList.remove('open');
+  }
 });
+
+/* ---------- Carrito de compras (se guarda en este navegador) ---------- */
+
+const CART_KEY = 'farfallina_carrito';
+
+function cargarCarrito(){
+  try {
+    const guardado = localStorage.getItem(CART_KEY);
+    return guardado ? JSON.parse(guardado) : [];
+  } catch (e){
+    return [];
+  }
+}
+
+function guardarCarrito(){
+  try { localStorage.setItem(CART_KEY, JSON.stringify(CARRITO)); } catch (e){}
+}
+
+let CARRITO = cargarCarrito(); // array de { id, cantidad }
+
+function totalUnidadesCarrito(){
+  return CARRITO.reduce((acc, item) => acc + item.cantidad, 0);
+}
+
+function actualizarBadgeCarrito(){
+  const total = totalUnidadesCarrito();
+  cartBadge.textContent = total;
+  cartBadge.classList.toggle('show', total > 0);
+}
+
+function agregarAlCarrito(id){
+  const encontrado = findBookById(id);
+  if (!encontrado) return;
+  const item = CARRITO.find(i => i.id === id);
+  if (item) item.cantidad++;
+  else CARRITO.push({ id, cantidad: 1 });
+  guardarCarrito();
+  actualizarBadgeCarrito();
+  renderCarritoPanel();
+  toast(`"${encontrado.libro.titulo}" agregado al carrito`);
+  track('agregar_carrito', { libro: encontrado.libro.titulo });
+}
+
+function cambiarCantidadCarrito(id, delta){
+  const item = CARRITO.find(i => i.id === id);
+  if (!item) return;
+  item.cantidad = Math.max(1, item.cantidad + delta);
+  guardarCarrito();
+  actualizarBadgeCarrito();
+  renderCarritoPanel();
+}
+
+function quitarDelCarrito(id){
+  CARRITO = CARRITO.filter(i => i.id !== id);
+  guardarCarrito();
+  actualizarBadgeCarrito();
+  renderCarritoPanel();
+}
+
+function renderCarritoPanel(){
+  actualizarBadgeCarrito();
+
+  const items = CARRITO
+    .map(entry => {
+      const encontrado = findBookById(entry.id);
+      return encontrado ? { ...entry, libro: encontrado.libro } : null;
+    })
+    .filter(Boolean);
+
+  if (items.length === 0){
+    cartList.innerHTML = '<p class="cart-empty">Todavía no agregaste ningún libro.<br>Elegí una historia para empezar — vas a poder seguir sumando mientras seguís mirando el catálogo.</p>';
+    cartTotalRow.style.display = 'none';
+    cartActions.style.display = 'none';
+    return;
+  }
+
+  let total = 0;
+  cartList.innerHTML = items.map(({ id, cantidad, libro }) => {
+    const subtotal = (libro.precio || 0) * cantidad;
+    total += subtotal;
+    return `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <div class="cart-item-title">${libro.titulo}</div>
+          <div class="cart-item-sub">${formatPrecio(libro.precio)} c/u — Subtotal: ${formatPrecio(subtotal)}</div>
+        </div>
+        <div class="qty-stepper">
+          <button type="button" data-action="qty-menos" data-id="${id}">−</button>
+          <span>${cantidad}</span>
+          <button type="button" data-action="qty-mas" data-id="${id}">+</button>
+        </div>
+        <button class="cart-item-remove" type="button" data-action="cart-remove" data-id="${id}" title="Quitar del carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>`;
+  }).join('');
+
+  cartTotalRow.style.display = 'flex';
+  cartTotalValue.textContent = formatPrecio(total);
+  cartActions.style.display = 'flex';
+
+  cartList.querySelectorAll('[data-action="qty-menos"]').forEach(btn => {
+    btn.addEventListener('click', () => cambiarCantidadCarrito(btn.dataset.id, -1));
+  });
+  cartList.querySelectorAll('[data-action="qty-mas"]').forEach(btn => {
+    btn.addEventListener('click', () => cambiarCantidadCarrito(btn.dataset.id, 1));
+  });
+  cartList.querySelectorAll('[data-action="cart-remove"]').forEach(btn => {
+    btn.addEventListener('click', () => quitarDelCarrito(btn.dataset.id));
+  });
+}
+
+cartToggle.addEventListener('click', () => {
+  cartPanel.classList.toggle('open');
+  if (cartPanel.classList.contains('open')) renderCarritoPanel();
+});
+
+cartPanelClose.addEventListener('click', () => cartPanel.classList.remove('open'));
+
+cartClearBtn.addEventListener('click', () => {
+  if (CARRITO.length === 0) return;
+  if (confirm('¿Vaciar todo el carrito?')){
+    CARRITO = [];
+    guardarCarrito();
+    actualizarBadgeCarrito();
+    renderCarritoPanel();
+  }
+});
+
+cartWhatsappBtn.addEventListener('click', () => {
+  const items = CARRITO
+    .map(entry => {
+      const encontrado = findBookById(entry.id);
+      return encontrado ? { ...entry, libro: encontrado.libro } : null;
+    })
+    .filter(Boolean);
+
+  if (items.length === 0) return;
+
+  let total = 0;
+  const lineas = items.map(({ cantidad, libro }) => {
+    const subtotal = (libro.precio || 0) * cantidad;
+    total += subtotal;
+    return `• ${cantidad} x ${libro.titulo} — ${formatPrecio(subtotal)}`;
+  });
+
+  const cp = cartCP.value.trim();
+
+  let mensaje = `Hola! Quiero hacer este pedido:\n${lineas.join('\n')}\n\nTotal: ${formatPrecio(total)}`;
+  if (cp) mensaje += `\nMi código postal: ${cp}`;
+  mensaje += `\n\nMe gustaría coordinar el pago y el envío o retiro. ¡Gracias!`;
+
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+  track('enviar_pedido_whatsapp', { cantidad_items: items.length, total, con_cp: !!cp });
+});
+
+actualizarBadgeCarrito();
 
 /* ---------- Carga masiva por ISBN ---------- */
 
